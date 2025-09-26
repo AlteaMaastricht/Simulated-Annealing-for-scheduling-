@@ -34,8 +34,12 @@ The **`fitness()` method** implements a multi-factor evaluation that maximizes p
 $$\text{Net Profit} = \sum (\text{Order Profits}) - \sum (\text{Student Labor Costs}) - \sum (\text{Drive Time Costs}) - \sum (\text{Penalty for Overtime}) \text{}$$
 
 * **Cost Breakdown:** Student labor cost is **€60 per hour**, applied to all work (service time and driving time).
-* **Heavy Penalization:** If a student's total time ($\text{t}$) exceeds the 8-hour maximum ($\text{self.max\_time}$), **a heavy penalty is applied**, calculated as $(\text{t} - \text{self.max\_time}) \times 1000$.
-* **Constraint Check:** **Prevents duplicate assignments;** the function returns $-\infty$ if an order is double-booked.
+* **Heavy penalization:** If a student's total time $t$ exceeds the 8-hour maximum (`self.max_time`), a heavy penalty is applied, calculated as: Penalty = (t - self.max_time) × 1000
+* **Constraint check:** Prevents duplicate assignments; the function returns $-\infty$ if an order is double-booked
+
+## Key Features
+
+> **Constraint Enforcement:** The fitness function acts as a strict validator, ensuring all solutions meet operational requirements while optimizing for maximum profitability.
 
 ### **Operational Constraints**
 
